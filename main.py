@@ -7,7 +7,7 @@ list_hello = ("Привет", "Здравствуй", "Hello")
 
 bot = telebot.TeleBot("1763079895:AAHl_i3dg7mnOw1Wiq8Yes-tktPfYFRhWDE", parse_mode=None)
 
-help_message ="Говноновостной бот. /start, зарегаться.\n/add_category *категория* - добавить категорию.\n/delete_category *категория* - удалить категорию.\n/delete_category all - удалить все категории.\nАналогично с keywordsами.\n/get_news - получить новости"
+help_message ="Говноновостной бот. Перед началом, запусти create_datab.py 1 раз, больше не нужно. /start, зарегаться.\n/add_category *категория* - добавить категорию.\n/delete_category *категория* - удалить категорию.\n/delete_category all - удалить все категории.\nАналогично с keywordsами.\n/get_news - получить новости"
 
 
 # print (help(newsapi.get_top_headlines))
@@ -58,7 +58,6 @@ def add_category(message):
     except:
         print("kakaya to zalupa while adding categories")
         bot.send_message(message.from_user.id, "kakaya to zalupa while adding categories")
-
 
 @bot.message_handler(commands=['delete_category'])
 def delete_category(message):
